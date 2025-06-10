@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "template_categories",
+  "info": {
+    "singularName": "template-category",
+    "pluralName": "template-categories",
+    "displayName": "Template Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "templates": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::template.template",
+      "inversedBy": "template_categories"
+    }
+  }
+}

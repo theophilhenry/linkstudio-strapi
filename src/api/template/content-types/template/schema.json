@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "templates",
+  "info": {
+    "singularName": "template",
+    "pluralName": "templates",
+    "displayName": "Template"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "template_data": {
+      "type": "text"
+    },
+    "is_pro": {
+      "type": "boolean"
+    },
+    "total_used": {
+      "type": "biginteger"
+    },
+    "template_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::template-category.template-category",
+      "mappedBy": "templates"
+    }
+  }
+}
