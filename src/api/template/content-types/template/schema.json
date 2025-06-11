@@ -31,7 +31,9 @@
       "type": "boolean"
     },
     "total_used": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "default": "0",
+      "min": "0"
     },
     "template_categories": {
       "type": "relation",

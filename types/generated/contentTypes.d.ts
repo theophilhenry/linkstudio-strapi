@@ -435,7 +435,14 @@ export interface ApiTemplateTemplate extends Struct.CollectionTypeSchema {
     >;
     template_data: Schema.Attribute.Text;
     thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    total_used: Schema.Attribute.BigInteger;
+    total_used: Schema.Attribute.BigInteger &
+      Schema.Attribute.SetMinMax<
+        {
+          min: '0';
+        },
+        string
+      > &
+      Schema.Attribute.DefaultTo<'0'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
