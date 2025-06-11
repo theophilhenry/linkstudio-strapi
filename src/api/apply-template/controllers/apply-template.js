@@ -11,13 +11,11 @@ module.exports = {
       const result = await strapi.db.connection('templates')
         .where({ document_id: template_documentId })
         .increment('total_used', 1)
-      console.log(result);
 
       if (result) {
         const updatedProduct = await strapi.documents('api::template.template').findOne({
           documentId: template_documentId
         });
-        console.log(updatedProduct);
       }
       ctx.body = 'success';
       ctx.status = 200;
