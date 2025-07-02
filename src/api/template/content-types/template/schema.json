@@ -24,6 +24,9 @@
     "name": {
       "type": "string"
     },
+    "descriptions": {
+      "type": "text"
+    },
     "template_data": {
       "type": "text"
     },
@@ -40,6 +43,12 @@
       "relation": "manyToMany",
       "target": "api::template-category.template-category",
       "mappedBy": "templates"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "templates"
     }
   }
 }
